@@ -33,7 +33,6 @@ $scope.test = 'test';
       for (var i = 0; i < 3; i++) {
         $scope.collection.push(res.data.data[i]);
       }
-      console.log($scope.collection);
       return $scope.collection
     })
   }
