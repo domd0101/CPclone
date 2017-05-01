@@ -1,0 +1,125 @@
+<div class="modal fade" id="myModal" role="dialog">
+   <div class="modal-dialog">
+    <!-- Modal content-->
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h3 class="modal-title">Pen Settings</h3>
+         </div>
+         <div class="modal-body set-stuff">
+             <a ng-click='html=true;css=false;js=false;bh=false;'>HTML</a>
+             <a ng-click='css=true;html=false;js=false;bh=false;'>CSS</a>
+             <a ng-click='css=false;html=false;js=true;bh=false;'>JavaScript</a>
+             <a ng-click='css=false;html=false;js=false;bh=true;'>Behavior</a>
+         </div>
+         <div class='setting-body'>
+           <div ng-show='html'>
+             <h4>HTML Preprocessor</h4>
+             <div class='dropdown'>
+             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span style='padding-left:380px;width:400px;border:1px solid lightgrey;' class='glyphicon glyphicon-chevron-down'></span></a>
+             <ul class="dropdown-menu">
+               <li><a>Slim</a></li>
+               <li><a>Pup</a></li>
+               <li><a>Markdown</a></li>
+               <li><a>Haml</a></li>
+             </ul>
+             </div>
+             <h4>Add Class(es) to  &lthtml&gt </h4>
+             <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">+</span>
+                <input style='width:400px' type="text" class="form-control" placeholder="some class(es)" aria-describedby="basic-addon1">
+              </div><br>
+             <h4>Stuff for &lthead&gt </h4>
+             <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">+</span>
+                <textarea style='width:400px;height:100px;' type="text" class="form-control" placeholder="&lt meta &gt &lt link &gt &lt script &gt" aria-describedby="basic-addon1"></textarea>
+              </div><br>
+           </div>
+           <div ng-show="css">
+             <h4>CSS Preprocessor</h4>
+             <div class='dropdown'>
+             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span style='padding-left:380px;width:400px;border:1px solid lightgrey;' class='glyphicon glyphicon-chevron-down'></span></a>
+             <ul class="dropdown-menu">
+               <li><a>SCSS</a></li>
+               <li><a>LESS</a></li>
+               <li><a>Sass</a></li>
+               <li><a>Stylus</a></li>
+               <li><a>PostCSS</a></li>
+             </ul>
+             </div>
+             <h4>CSS Base</h4>
+             <p>NORMALIZE  <input type="radio">  RESET <input type="radio">  NEITHER <input type="radio"></p>
+             <h4>Add External CSS</h4>
+             <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">+</span>
+                <input style='width:400px' type="text" class="form-control" placeholder="CSS <script>" aria-describedby="basic-addon1">
+              </div><br>
+             <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">+</span>
+                <input style='width:400px' type="text" class="form-control" placeholder="CSS <script>" aria-describedby="basic-addon1">
+              </div>
+              <div class='quick'>
+                <h4 style='margin-right:5px;'>Quick-Add: </h4>
+                <div class='dropdown'>
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span style='padding-left:180px;width:200px;border:1px solid lightgrey;' class='glyphicon glyphicon-chevron-down'></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a>Bootstrap</a></li>
+                    <li><a>MaterilizeCSS</a></li>
+                    <li><a>Foundation</a></li>
+                    <li><a>Animate.CSS</a></li>
+                  </ul>
+                </div>
+              </div>
+           </div>
+           <div ng-show="js">
+             <h4>Javascript Preprocessor</h4>
+             <div class='dropdown'>
+             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span style='padding-left:380px;width:400px;border:1px solid lightgrey;' class='glyphicon glyphicon-chevron-down'></span></a>
+             <ul class="dropdown-menu">
+               <li><a>CoffeeScript</a></li>
+               <li><a>LiveScript</a></li>
+               <li><a>TypeScript</a></li>
+               <li><a>Babel</a></li>
+             </ul>
+             </div>
+             <h4>Add External Javascript</h4>
+             <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">+</span>
+                <input style='width:400px' type="text" class="form-control" placeholder="JS <script>" aria-describedby="basic-addon1">
+              </div><br>
+             <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">+</span>
+                <input style='width:400px' type="text" class="form-control" placeholder="JS <script>" aria-describedby="basic-addon1">
+              </div><br>
+             <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">+</span>
+                <input style='width:400px' type="text" class="form-control" placeholder="JS <script>" aria-describedby="basic-addon1">
+              </div>
+              <div class='quick'>
+                <h4 style='margin-right:5px;'>Quick-Add: </h4>
+                <div class='dropdown'>
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span style='padding-left:180px;width:200px;border:1px solid lightgrey;' class='glyphicon glyphicon-chevron-down'></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a>Angular</a></li>
+                    <li><a>Bootstrap</a></li>
+                    <li><a>D3</a></li>
+                    <li><a>jQuery</a></li>
+                    <li><a>jQuery UI</a></li>
+                    <li><a>React</a></li>
+                  </ul>
+                </div>
+              </div>
+           </div>
+           <div ng-show="bh">
+             <h3>Autosave? </h3>
+                <p>Enable <input type="checkbox"></p>
+             <h3>Run Button? </h3>
+                <p>Enable <input type="checkbox"></p>
+           </div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+       </div>
+     </div>
+   </div>

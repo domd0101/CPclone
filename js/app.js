@@ -13,14 +13,9 @@ var cpapp = angular.module('cpapp',['ui.router']);
         templateUrl: './html/newpen.html',
         controller: 'mainCtrl'
       })
-      // .state('roster',{
-      //   url: '/roster',
-      //   templateUrl: 'view/roster.html',
-      //   controller: 'rosterCtrl'
-      // })
-      // .state('player',{
-      //   url:'/player/:id',
-      //   templateUrl: 'view/player.html',
-      //   controller: 'playerCtrl'
-      // })
+      .state('pens',{
+        url: '/pens',
+        templateUrl: './html/pens.html',
+        controller: 'mainCtrl'
+      })
 }])

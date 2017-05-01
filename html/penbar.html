@@ -27,30 +27,10 @@
       <a style='font-weight:normal;border-radius:4px;background-color:#262626;color:white;font-size:16px;margin-top:4px;padding:10px 14px;margin-right:7px;'><span class="glyphicon glyphicon-cloud" style='color:grey;font-size:16px;'></span> Save</a>
     </li>
     <li>
-      <a data-toggle="modal" data-target="#myModal" style='font-weight:normal;border-radius:4px;background-color:#262626;color:white;font-size:16px;margin-top:4px;padding:10px 14px;margin-right:7px;'><span class="glyphicon glyphicon-cog" style='color:grey;font-size:16px;'></span> Settings</a>
+      <a ng-click='html=true;css=false;js=false;bh=false;' data-toggle="modal" data-target="#myModal" style='font-weight:normal;border-radius:4px;background-color:#262626;color:white;font-size:16px;margin-top:4px;padding:10px 14px;margin-right:7px;'><span class="glyphicon glyphicon-cog" style='color:grey;font-size:16px;'></span> Settings</a>
     </li>
 
-    <div class="modal fade" id="myModal" role="dialog">
-       <div class="modal-dialog">
-        <!-- Modal content-->
-           <div class="modal-content">
-             <div class="modal-header">
-               <button type="button" class="close" data-dismiss="modal">&times;</button>
-               <h4 class="modal-title">Pen Settings</h4>
-             </div>
-             <div class="modal-body set-stuff">
-                 <a>HTML</a>
-                 <a>CSS</a>
-                 <a>JavaScript</a>
-                 <a>Behavior</a>
-             </div>
-             <div class="modal-footer">
-               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-             </div>
-           </div>
-         </div>
-       </div>
-
+  <setting-menu></setting-menu>
 
 
     <li class="dropdown">

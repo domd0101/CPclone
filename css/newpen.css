@@ -1,6 +1,9 @@
 .title{
   color:white;
 }
+.modal{
+  height:auto;
+}
 .left-on-nav{
   font-weight: normal;
   color: white;
@@ -24,6 +27,32 @@
 }
 .set-stuff a{
   color: grey;
+}
+.modal-title h3 h4{
+  font-weight: bold;
+}
+.setting-body{
+  margin-left: 20px;
+  width: 100%;
+  height: 300px;
+}
+.setting-body p{
+  font-size: 12px;
+}
+.setting-body .dropdown-menu{
+  left: 0px;
+  width: 80%;
+  height: auto;
+  width:400px;
+}
+.setting-body .dropdown-menu{
+  border-radius:2px;
+  color:white;
+  padding:2px 5px;
+}
+.quick{
+  display:flex;
+  align-items: center;
 }
 .drops{
   width: 190px;
@@ -103,7 +132,7 @@
 }
 .coded{
   width: 100%;
-  height: 600px;
+  height: 450px;
   background: white;
   color: black;
 }

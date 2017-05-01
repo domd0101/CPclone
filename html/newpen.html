@@ -2,9 +2,9 @@
 
 <section id='Vresizer' class='editor' style='height:200px;min-height:170px;max-height:345px;'>
 
-  <div id='Hresizer' style='min-width:0;' class='edit-box-html'>
+  <div id='Hresizer' style='width:150px;min-width:0;' class='edit-box-html'>
     <div class='edit-top'>
-      <p><a data-toggle="modal" data-target="#myModal"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;' class='glyphicon glyphicon-cog'></span></a> HTML</p>
+      <p><a ng-click='html=true;css=false;js=false;bh=false;' data-toggle="modal" data-target="#myModal"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;' class='glyphicon glyphicon-cog'></span></a> HTML</p>
       <div class=' dropdown'>
       <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;margin-right:15px;' class='glyphicon glyphicon-chevron-down' ></span></a>
       <ul class="dropdown-menu drops">
@@ -15,13 +15,13 @@
       </ul>
       </div>
     </div>
-    <div class='CodeMirror CodeMirror-simplescroll'>
-      <textarea id='htmlcode'>hello</textarea>
+    <div class='CodeMirror CodeMirror-wrap CodeMirror-simplescroll'>
+      <textarea id='htmlcode'><h1>hello</h1></textarea>
     </div>
   </div>
-  <div style='min-width:0px;' class='edit-box-css'>
+  <div style='width:150px;min-width:0px;' class='edit-box-css'>
     <div class='edit-top'>
-      <p><a data-toggle="modal" data-target="#myModal"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;' class='glyphicon glyphicon-cog'></span></a> CSS</p>
+      <p><a ng-click='css=true;html=false;js=false;bh=false;' data-toggle="modal" data-target="#myModal"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;' class='glyphicon glyphicon-cog'></span></a> CSS</p>
       <div class=' dropdown'>
       <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;margin-right:5px;' class='glyphicon glyphicon-chevron-down'></span></a>
       <ul class="dropdown-menu drops">
@@ -32,13 +32,13 @@
       </ul>
       </div>
     </div>
-    <div class='CodeMirror CodeMirror-simplescroll'>
+    <div class='CodeMirror CodeMirror-wrap CodeMirror-simplescroll'>
       <textarea id='csscode' class='code'></textarea>
     </div>
   </div>
-  <div id='H1resizer' style='min-width:0px;' class='edit-box-js'>
+  <div id='H1resizer' style='width:150px;min-width:0px;' class='edit-box-js'>
     <div class='edit-top'>
-      <p><a data-toggle="modal" data-target="#myModal"><span style='margin-left:7px;border-radius:2px;color:white;padding:2px 5px;background:#404040;' class='glyphicon glyphicon-cog'></span></a> JS</p>
+      <p><a ng-click='css=false;html=false;js=true;bh=false;' data-toggle="modal" data-target="#myModal"><span style='margin-left:7px;border-radius:2px;color:white;padding:2px 5px;background:#404040;' class='glyphicon glyphicon-cog'></span></a> JS</p>
       <div class=' dropdown'>
       <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;margin-right:5px;' class='glyphicon glyphicon-chevron-down'></span></a>
       <ul class="dropdown-menu drops">
@@ -49,7 +49,7 @@
       </ul>
       </div>
     </div>
-    <div class='CodeMirror CodeMirror-simplescroll'>
+    <div class='CodeMirror CodeMirror-wrap CodeMirror-simplescroll'>
       <textarea id='jscode' class='code'></textarea>
     </div>
   </div>
@@ -76,7 +76,7 @@
 
 
 
-<script type="text/javascript">
+<script type='text/javascript'>
     $('#Vresizer').resizable({
       handles: 's'
     });
@@ -88,25 +88,33 @@
     });
     var textarea1 = document.getElementById('htmlcode');
     var editor1 = CodeMirror.fromTextArea(textarea1, {
-      theme: 'seti',
-    	lineNumbers: true
+      theme: 'base16-dark',
+      mode: 'html',
+      lineWrapping: true,
+    	lineNumbers: true,
+      scrollbarStyle: null
     });
     var textarea2 = document.getElementById('csscode');
     var editor2 = CodeMirror.fromTextArea(textarea2, {
-      theme: 'seti',
-      mode: 'html',
-    	lineNumbers: true
+      theme: 'base16-dark',
+      mode: 'css',
+      lineWrapping: true,
+    	lineNumbers: true,
+      scrollbarStyle: null
     });
     var textarea3 = document.getElementById('jscode');
     var editor3 = CodeMirror.fromTextArea(textarea3, {
-      theme: 'seti',
-    	lineNumbers: true
+      theme: 'base16-dark',
+      mode: "javascript",
+      lineWrapping: true,
+    	lineNumbers: true,
+      scrollbarStyle: null
     });
     var updateOutput = function() {
-   	$("#out").contents().find("html").html("<html>"+ editor1.getValue()+"</html>");
-   	// document.getElementById("outputPanel").contentWindow.eval($("#javascriptPanel").val());
-    console.log('worked: ----->>>', $("#htmlcode").val())
-    console.log(editor1.getValue())
+   	$("iframe").contents().find("html").html("<html><style>"+editor2.getValue()+
+    "</style><div>"+editor1.getValue()+"</div></html>");
+   	document.getElementById("out").contentWindow.eval(editor3.getValue());
+
    }
   setInterval(function(){ updateOutput(); }, 1000);
 

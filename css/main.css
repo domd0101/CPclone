@@ -8,8 +8,8 @@ body{
   position: relative;
 }
 .logog{
-  width: 160px;
-  margin-top: 4px;
+  width: 120px;
+  margin: 12px 0 0 12px;
 }
 .navbar li a{
   font-weight: bold;
@@ -34,6 +34,10 @@ body{
   display: flex;
   color: white;
   margin: 20px 60px;
+}
+.picked-page{
+  color: white;
+  margin: 20px 60px 100px 60px;
 }
 .pleft{
   display: flex;
@@ -60,6 +64,23 @@ body{
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.picked-page-box{
+  width:100%;
+  height: 100%;
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.nextbtnblock{
+  display: flex;
+  justify-content: center;
+}
+.nextbtn{
+  background: black;
+  color: white;
+  border: 3px solid white;
+}
 .picked-pen{
   margin-bottom: 20px;
   padding: 10px;
@@ -82,6 +103,16 @@ body{
   height: 330px;
   background:#262626;
   border-radius: 1px;
+}
+.lat h5{
+  color:grey;
+}
+.lat a{
+  text-decoration: none;
+  color: #1ad1ff;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
 }
 .latest-top{
   border-bottom: 4px solid yellow;
