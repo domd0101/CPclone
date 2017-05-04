@@ -8,7 +8,7 @@
       </div>
       <section class='picked-box'>
           <div ng-repeat='x in pick' class='picked-pen'>
-            <img width='100%' src="{{x.images.small}}" alt="">
+            <img ui-sref='viewpen({id:x.id})' width='100%' src="{{x.images.small}}" alt="">
             <p>{{x.title}}</p>
             <div class='bot' width='200px'>
               <p><img width='20px' src="{{x.user.avatar}}" alt=""> {{x.user.nicename}}</p>
@@ -35,28 +35,28 @@
     <section class='recent'>
       <div class='recent-top'>
         <h4 style="font-weight:900;">My Recent Pens </h4>
-        <span style="color:#1ad1ff;margin-bottom:13px;" class='small glyphicon glyphicon-arrow-right'></span>
-
+        <span style="color:#1ad1ff;margin-bottom:13px;" class=' glyphicon glyphicon-arrow-right'></span>
       </div>
-      stuff
+      <span style='font-size:30px;color:grey;' class='glyphicon glyphicon-align-left'></span>
+
       <div style='border-color:yellow;' class='recent-top'>
         <h4 style="font-weight:900;">My Recent Projects</h4>
-        <span style="color:yellow;margin-bottom:13px;" class='small glyphicon glyphicon-arrow-right'></span>
-
+        <span style="color:yellow;margin-bottom:13px;" class=' glyphicon glyphicon-arrow-right'></span>
       </div>
-      stuff
+      <p>You haven't created any Projects yet. <a href="https://codepen.io/project/editor">Go make one!</a></p>
+
       <div style='border-color:green;' class='recent-top'>
         <h4 style="font-weight:900;">My Recent Posts</h4>
-        <span style="color:green;margin-bottom:13px;" class='small glyphicon glyphicon-arrow-right'></span>
-
+        <span style="color:green;margin-bottom:13px;" class='glyphicon glyphicon-arrow-right'></span>
       </div>
-      stuff
+      <span style='font-size:30px;color:grey;' class='glyphicon glyphicon-list'></span>
+
       <div style='border-color:purple;' class='recent-top'>
         <h4 style="font-weight:900;">My Recent Collections</h4>
-        <span style="color:purple;margin-bottom:13px;" class='small glyphicon glyphicon-arrow-right'></span>
-
+        <span style="color:purple;margin-bottom:13px;" class=' glyphicon glyphicon-arrow-right'></span>
       </div>
-      stuff
+      <span style='font-size:30px;color:grey;' class='glyphicon glyphicon-align-left'></span>
+
     </section>
   </div>
 </section>
@@ -64,9 +64,9 @@
 <div class='posts'>
   <div class='posts-top'>
       <h1 style="font-weight:900;">Picked Posts</h1>
-      <p style='color:#1ad1ff'>View More Posts
+      <a style='text-decoration: none;' ui-sref='posts'><p  style='color:#1ad1ff'>View More Posts
       <span style="color:yellow;margin-bottom:13px;" class='small glyphicon glyphicon-arrow-right'></span>
-      </p>
+      </p></a>
   </div>
     <div class='posts-stuff'>
       <div ng-repeat='x in post' class='picked-post'>
@@ -86,9 +86,9 @@
 <div class='posts'>
   <div style='border-color:purple;' class='posts-top'>
       <h1 style="font-weight:900;">Picked Collections</h1>
-      <p style='color:#1ad1ff'>View More Collections
+      <a style='text-decoration: none;' ui-sref='collections'><p style='color:#1ad1ff'>View More Collections
       <span style="color:purple;margin-bottom:13px;" class='small glyphicon glyphicon-arrow-right'></span>
-      </p>
+    </p></a>
   </div>
     <div class='posts-stuff'>
       <div ng-repeat='x in collection' class='picked-post'>

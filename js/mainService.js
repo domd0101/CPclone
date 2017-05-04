@@ -25,6 +25,13 @@ cpapp.service('mainService',['$http',function($http){
       return results;
     })
   }
+  this.searching = function(para){
+    // setTimeout(function(){  }, 2000)
+    var promise = $http.get('http://cpv2api.com/search/pens?q='+para+'');
+    return promise.then(function(results){
+      return results;
+    })
+  }
 
 
 

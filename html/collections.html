@@ -1,0 +1,33 @@
+<nav-bar></nav-bar>
+
+
+  <div class='picked'>
+  <div style='border-color:purple' class='pickedtop'>
+    <h1 style="font-weight:900;">Explore Collections</h1>
+  </div>
+  </div>
+<section class='picked-page'>
+
+
+  <div class='picked-page-box'>
+    <div ng-repeat='x in collection2' class='picked-post'>
+      <div class='infopost'>
+        <h6 style='color:grey'>{{x.penCount}}</h6>
+      <h4>{{x.title}}</h4>
+      <a style='color:purple' href="{{x.url}}">View full Collection</a>
+      </div>
+      <div class='bot'>
+        <p ><img width='20px' src="{{x.user.avatar}}" alt=""> {{x.user.nicename}}</p>
+        <p><span class='glyphicon glyphicon-heart'></span> {{x.loves}} <span class='glyphicon glyphicon-eye-open'></span> {{x.views}}</p>
+      </div>
+    </div>
+  </div>
+
+<!--
+  <div class='nextbtnblock'>
+    <label ng-click='one=false;two=true;' class='btn nextbtn'>Next <span class='glyphicon glyphicon-chevron-right'></span></label>
+  </div> -->
+
+  </section>
+
+<foot></foot>

@@ -1,6 +1,15 @@
 .title{
   color:white;
 }
+.pen-view-name{
+  font-size:20px;
+  background: black;
+  border: none;
+  width: 400px;
+}
+input:focus{
+  outline: none;
+}
 .modal{
   height:auto;
 }

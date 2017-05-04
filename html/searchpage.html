@@ -1,18 +1,21 @@
-<nav-bar></nav-bar>
-
-
+<nav-bar ></nav-bar>
 
   <div class='picked'>
-  <div class='pickedtop'>
-    <h1 style="font-weight:900;">Explore Pens</h1>
+    <div class='pickedtop'>
+      <div class="search-bar">
+        <form ng-submit='save2(search)'>
+            <input style='box-shadow:none;' ng-model='search' placeholder='Search' type="text">
+        </form>
+      </div>
+    </div>
   </div>
-  </div>
+
 <section class='picked-page'>
 
 
   <section class='picked-page-box'>
-      <div ng-repeat='x in pickpage' class='picked-pen'>
-        <img ui-sref='viewpen({id:x.id})' width='100%' src="{{x.images.small}}" alt="">
+      <div ng-repeat='x in searchstuff' class='picked-pen'>
+        <img width='100%' src="{{x.images.small}}" alt="">
         <p>{{x.title}}</p>
         <div class='bot' width='200px'>
           <p><img width='20px' src="{{x.user.avatar}}" alt=""> {{x.user.nicename}}</p>

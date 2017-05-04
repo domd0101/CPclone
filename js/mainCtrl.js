@@ -1,6 +1,4 @@
-cpapp.controller('mainCtrl',['$scope','mainService',function($scope,mainService){
-
-$scope.test = 'test';
+cpapp.controller('mainCtrl',['$scope','mainService','$state','$stateParams',function($scope,mainService,$state,$stateParams){
 
   $scope.picked = function(){
     var promise = mainService.picked();
@@ -13,7 +11,6 @@ $scope.test = 'test';
       for (var i = 0; i < 12; i++) {
         $scope.pickpage.push(res.data.data[i]);
       }
-      console.log($scope.pickpage);
       return $scope.pick,$scope.pickpage
     })
   }
@@ -24,10 +21,14 @@ $scope.test = 'test';
     var promise = mainService.posted();
     return promise.then(function(res){
       $scope.post = [];
+      $scope.post2 = [];
       for (var i = 0; i < 3; i++) {
         $scope.post.push(res.data.data[i]);
       }
-      return $scope.post
+      for (var i = 0; i < 6; i++) {
+        $scope.post2.push(res.data.data[i]);
+      }
+      return $scope.post,$scope.post2
     })
   }
   $scope.posted();
@@ -48,15 +49,23 @@ $scope.test = 'test';
     var promise = mainService.collections();
     return promise.then(function(res){
       $scope.collection = [];
+      $scope.collection2 = [];
       for (var i = 0; i < 3; i++) {
         $scope.collection.push(res.data.data[i]);
       }
-      return $scope.collection
+      for (var i = 0; i < 9; i++) {
+        $scope.collection2.push(res.data.data[i]);
+      }
+      return $scope.collection,$scope.collection2
     })
   }
   $scope.collections();
 
-
+    $scope.save = function(search){
+      $state.go('searchpage');
+      localStorage.setItem('array', search);
+      var g = localStorage.array;
+    }
 
 }])
 

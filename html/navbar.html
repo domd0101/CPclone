@@ -15,13 +15,13 @@
   <div class='stuff1'>
   <ul class="nav navbar-nav">
       <li><a ui-sref='pens' style='color:white;'>Pens</a></li>
-      <li><a href='' style='color:white;'>Projects</a></li>
-      <li><a href='' style='color:white;'>Posts</a></li>
-      <li><a href='' style='color:white;'>Collections</a></li>
-      <li style='margin-left:10px;'><a>Spark</a></li>
-      <li><a>Jobs</a></li>
-      <li><a>Blog</a></li>
-      <li><a href='' style='padding-top:10px;'><img width='60px' src="../css/gopro.png" alt=""></a></li>
+      <li><a href='https://codepen.io/projects/' style='color:white;'>Projects</a></li>
+      <li><a ui-sref='posts' style='color:white;'>Posts</a></li>
+      <li><a ui-sref='collections' style='color:white;'>Collections</a></li>
+      <li style='margin-left:10px;'><a href='https://codepen.io/spark/'>Spark</a></li>
+      <li><a href='https://codepen.io/jobs'>Jobs</a></li>
+      <li><a ui-sref='blog'>Blog</a></li>
+      <li><a href='https://codepen.io/pro/' style='padding-top:10px;'><img width='60px' src="../css/gopro.png" alt=""></a></li>
   </ul>
   </div>
 
@@ -31,20 +31,28 @@
       <a class="dropdown-toggle down" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style='font-weight:normal;border-radius:4px;background-color:#262626;color:white;font-size:16px;margin-top:4px;padding:10px 14px;margin-right:7px;'>Create <span class="glyphicon glyphicon-chevron-down" style='color:green;font-size:16px;'></span></a>
       <ul class="dropdown-menu create-menu" >
         <li class='borded'><a style='font-size:18px;' ui-sref="newpen"><span class="glyphicon glyphicon-th-list" style='color:lightblue;font-size:20px;'></span> New Pen</a></li>
-        <li class='borded'><a style='font-size:18px;' href="#"><span class="glyphicon glyphicon-th" style='color:yellow;font-size:20px;'></span> New Project</a></li>
-        <li class='borded'><a style='font-size:18px;' href="#"><span class="glyphicon glyphicon-th-large" style='color:green;font-size:20px;'></span> New Post</a></li>
+        <li role="separator" class="divider"></li>
+        <li class='borded'><a style='font-size:18px;' ui-sref='newpost'><span class="glyphicon glyphicon-th-large" style='color:green;font-size:20px;'></span> New Post</a></li>
       </ul>
     </li>
     <li class="dropdown">
       <a  style='border-radius:4px;background-color:#262626;color:white;font-size:26px;margin-top:2px;padding:10px;margin-right:7px;' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class=" glyphicon glyphicon-user"></span></a>
       <ul class="dropdown-menu create-menu">
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Help</a></li>
+        <li><a href="">Settings</a></li>
+        <li><a href="">Help</a></li>
         <li role="separator" class="divider"></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="">Login</a></li>
       </ul>
     </li>
-    <li><a style='border-radius:4px;color:white;font-size:26px;margin-top:2px;padding:10px' ><span class='glyphicon glyphicon-search'></span></a></li>
+
+    <li class="dropdown" ng-hide='show'><a style='border-radius:4px;color:white;font-size:26px;margin-top:2px;padding:10px'  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      <span class='glyphicon glyphicon-search'></span></a>
+      <div class="dropdown-menu search-bar">
+        <form ng-submit='save(search)'>
+            <input ng-model='search' placeholder='Search' type="text">
+        </form>
+      </div>
+    </li>
 
     <li class="dropdown">
       <a  style='border-radius:4px;color:white;font-size:26px;margin-top:2px;padding:10px' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-bell"></span></a>

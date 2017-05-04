@@ -1,0 +1,73 @@
+<nav-bar></nav-bar>
+
+
+<section class='newpost'>
+
+<div class='left'>
+  <div>
+    <input class='post-title' placeholder='Post Title'>
+    <p style='font-size:16px;'>http://codepen.io/user/post/<input style='font-size:20px;font-weight:normal;border-radius:3px;' width='150px;'> <a class='btn btn-primary'>Save</a></p>
+  </div>
+  <div class='text-editor-left'>
+    <div class='white' id="editor"></div>
+  </div>
+
+  <div>
+    <h3 style='color:white;'>Custom CSS</h3>
+    <textarea class='black' rows="4" cols="100"></textarea>
+  </div>
+
+
+</div>
+
+<div class='right'>
+<div class='text-editor-right'>
+  <div style='border-bottom:1px solid grey;'>
+    <h3>Publish</h3>
+  </div>
+  <p style='color:grey;'>This post is not yet published.</p>
+  <div>
+    <button class='btn'>Save</button>
+    <button style='width:150px' class='btn btn-success'>Publish</button>
+  </div>
+</div>
+<div class='text-editor-right'>
+  <div style='border-bottom:1px solid grey;'>
+    <h3>Drafts</h3>
+  </div>
+
+  <p style='color:grey;'>Looking for your unpublished Posts?</p>
+  <a href="">They are here.</a>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<script>
+  var quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+</script>
+
+
+<footer class='foot'>
+    <div class='feet1'>
+      <div class='links'><h5>CodePen</h5><a>About</a><a href="">Blog</a><a href="">Podcast</a><a href="">Advertising</a><a href="">Docs</a><a href="">Support</a><a href="">Shop</a></div>
+
+      <div class='links'><h5>Community</h5><a>Jobs</a><a href="">Meetups</a><a href="">Teams</a><a href="">Patterns</a><a href="">Code of Conduct</a></div>
+
+      <div class='links'><h5>Social</h5><a>Twitter</a><a href="">Facebook</a><a href="">Flickr</a><a href="">Instagram</a></div>
+    </div>
+    <div class='feet2'>
+        <img width='150px' src="https://blog.codepen.io/wp-content/uploads/2012/06/White-Large.png" alt="">
+        <h5> ©2017 CodePen</h5>
+        <h5> Demo or it didn't happen</h5>
+    </div>
+</footer>
