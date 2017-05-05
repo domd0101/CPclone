@@ -1,10 +1,10 @@
-<pen-bar></pen-bar>
+<newpen-bar pen-name='{{Name}}' pen-user='{{User}}'></newpen-bar>
 
 <section id='Vresizer' class='editor' style='height:200px;min-height:170px;max-height:345px;'>
 
   <div id='Hresizer' style='width:150px;min-width:0;' class='edit-box-html'>
     <div class='edit-top'>
-      <p><a ng-click='html=true;css=false;js=false;bh=false;' data-toggle="modal" data-target="#myModal"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;' class='glyphicon glyphicon-cog'></span></a> HTML</p>
+      <p><a ng-click='css=false;js=false;bh=false;html=true;' data-toggle="modal" data-target="#myModal"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;' class='glyphicon glyphicon-cog'></span></a> HTML</p>
       <div class=' dropdown'>
       <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;margin-right:15px;' class='glyphicon glyphicon-chevron-down' ></span></a>
       <ul class="dropdown-menu drops">
@@ -21,7 +21,7 @@
   </div>
   <div style='width:150px;min-width:0px;' class='edit-box-css'>
     <div class='edit-top'>
-      <p><a ng-click='css=true;html=false;js=false;bh=false;' data-toggle="modal" data-target="#myModal"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;' class='glyphicon glyphicon-cog'></span></a> CSS</p>
+      <p><a ng-click='html=false;js=false;bh=false;css=true;' data-toggle="modal" data-target="#myModal"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;' class='glyphicon glyphicon-cog'></span></a> CSS</p>
       <div class=' dropdown'>
       <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;margin-right:5px;' class='glyphicon glyphicon-chevron-down'></span></a>
       <ul class="dropdown-menu drops">
@@ -38,7 +38,7 @@
   </div>
   <div id='H1resizer' style='width:150px;min-width:0px;' class='edit-box-js'>
     <div class='edit-top'>
-      <p><a ng-click='css=false;html=false;js=true;bh=false;' data-toggle="modal" data-target="#myModal"><span style='margin-left:7px;border-radius:2px;color:white;padding:2px 5px;background:#404040;' class='glyphicon glyphicon-cog'></span></a> JS</p>
+      <p><a ng-click='css=false;html=false;bh=false;js=true;' data-toggle="modal" data-target="#myModal"><span style='margin-left:7px;border-radius:2px;color:white;padding:2px 5px;background:#404040;' class='glyphicon glyphicon-cog'></span></a> JS</p>
       <div class=' dropdown'>
       <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span style='border-radius:2px;color:white;padding:2px 5px;background:#404040;margin-right:5px;' class='glyphicon glyphicon-chevron-down'></span></a>
       <ul class="dropdown-menu drops">
@@ -63,7 +63,7 @@
 
   <section class='coded'>
 
-  <iframe style='margin-top:3px;width:100%;height:100%;' id='out'></iframe>
+  <iframe style='margin-top:3px;width:100vw;height:100vh;' id='out'></iframe>
 
   </section>
 
@@ -86,38 +86,4 @@
     $('#H1resizer').resizable({
       handles: 'w'
     });
-    var textarea1 = document.getElementById('htmlcode');
-    var editor1 = CodeMirror.fromTextArea(textarea1, {
-      theme: 'base16-dark',
-      mode: 'html',
-      lineWrapping: true,
-    	lineNumbers: true,
-      scrollbarStyle: null
-    });
-    var textarea2 = document.getElementById('csscode');
-    var editor2 = CodeMirror.fromTextArea(textarea2, {
-      theme: 'base16-dark',
-      mode: 'css',
-      lineWrapping: true,
-    	lineNumbers: true,
-      scrollbarStyle: null
-    });
-    var textarea3 = document.getElementById('jscode');
-    var editor3 = CodeMirror.fromTextArea(textarea3, {
-      theme: 'base16-dark',
-      mode: "javascript",
-      lineWrapping: true,
-    	lineNumbers: true,
-      scrollbarStyle: null
-    });
-    var updateOutput = function() {
-   	$("iframe").contents().find("html").html("<html><style>"+editor2.getValue()+
-    "</style><div>"+editor1.getValue()+"</div></html>");
-   	document.getElementById("out").contentWindow.eval(editor3.getValue());
-
-   }
-  setInterval(function(){ updateOutput(); }, 1000);
-
-
-
 </script>

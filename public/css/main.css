@@ -109,6 +109,7 @@ body{
   color: grey;
 }
 .bot{
+  margin-top: 2px;
   color:grey;
   display: flex;
   justify-content: space-between;

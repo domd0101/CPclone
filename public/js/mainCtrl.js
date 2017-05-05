@@ -1,4 +1,29 @@
-cpapp.controller('mainCtrl',['$scope','mainService','$state','$stateParams',function($scope,mainService,$state,$stateParams){
+cpapp.controller('mainCtrl',['$scope','mainService','$state','$stateParams','userService',function($scope,mainService,$state,$stateParams,userService){
+
+
+  function getUser() {
+    userService.getUser().then(function(user) {
+      if (user) $scope.user = user.username;
+      else   $scope.user = 'NOT LOGGED IN';
+    })
+  }
+
+  getUser();
+
+  $scope.loginLocal = function(username, password) {
+    console.log('Logging in with', username, password);
+    userService.loginLocal({
+      username: username,
+      password: password
+    })
+    .then(function(res) {
+      getUser();
+    })
+  }
+
+  $scope.logout = userService.logout;
+
+
 
   $scope.picked = function(){
     var promise = mainService.picked();

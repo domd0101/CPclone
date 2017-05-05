@@ -1,5 +1,5 @@
 <nav-bar></nav-bar>
-<section class='picked'>
+<section class='container picked'>
 
   <div class='pleft'>
       <div class='pickedtop'>
@@ -7,8 +7,12 @@
         <h4 ui-sref='pens' style="color:#1ad1ff">view more pens <span style="color:#1ad1ff" class='small glyphicon glyphicon-arrow-right'></span></h4>
       </div>
       <section class='picked-box'>
+
           <div ng-repeat='x in pick' class='picked-pen'>
-            <img ui-sref='viewpen({id:x.id})' width='100%' src="{{x.images.small}}" alt="">
+            <div ui-sref='viewpen({title:"pen",id:x.id})' class="hoverable">
+              <img class="img-responsive"  width='100%' height:'100%' src="{{x.images.small}}" alt="">
+              <div class='hover-text'>View Pen</div>
+            </div>
             <p>{{x.title}}</p>
             <div class='bot' width='200px'>
               <p><img width='20px' src="{{x.user.avatar}}" alt=""> {{x.user.nicename}}</p>

@@ -1,0 +1,29 @@
+{
+  "name": "cpclone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/domd0101/CPclone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/domd0101/CPclone/issues"
+  },
+  "homepage": "https://github.com/domd0101/CPclone#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "massive": "^2.5.0",
+    "passport": "^0.3.2",
+    "passport-auth0": "^0.6.0"
+  }
+}

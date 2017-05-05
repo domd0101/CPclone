@@ -1,0 +1,72 @@
+<nav style='margin-bottom:0;' class="navbar navbar-inverse">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a ui-sref="home" ><img width='40px' src="../css/Button-Fill-White-Large.png" alt=""></a>
+</div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+
+  <section class='left-on-nav'>
+    <div>
+      <input placeholder='Untitled' value='{{penName}}' class='pen-view-name'>
+    </div>
+    <!-- <input value='{{penName}}' class='pen-view-name'> <span style='font-size:14px;' class='glyphicon glyphicon-pencil'></span>
+    </div> -->
+    <div>
+      <!-- <p style='color:grey'>A PEN BY <a style='color:white'>User</a></p> -->
+      <p style='color:grey'>A PEN BY <a style='color:white'>{{penUser}}</a></p>
+    </div>
+  </section>
+
+  <div class='stuff2'>
+  <ul class="nav navbar-nav navbar-right">
+    <li>
+      <a style='font-weight:normal;border-radius:4px;background-color:#262626;color:white;font-size:16px;margin-top:4px;padding:10px 14px;margin-right:7px;'><span class="glyphicon glyphicon-cloud" style='color:grey;font-size:16px;'></span> Save</a>
+    </li>
+    <li>
+      <a ng-click='html=true;css=false;js=false;bh=false;' data-toggle="modal" data-target="#myModal" style='font-weight:normal;border-radius:4px;background-color:#262626;color:white;font-size:16px;margin-top:4px;padding:10px 14px;margin-right:7px;'><span class="glyphicon glyphicon-cog" style='color:grey;font-size:16px;'></span> Settings</a>
+    </li>
+
+  <setting-menu></setting-menu>
+
+
+    <li class="dropdown">
+      <a  style='font-weight:normal;border-radius:4px;background-color:#262626;color:white;font-size:16px;margin-top:4px;padding:10px 14px;margin-right:7px;' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class='glyphicon glyphicon-eye-open' style='color:grey;font-size:16px;'></span> Change View</a>
+      <ul class="dropdown-menu edit-drop">
+        <li style='font-weight:bold;'>Editor Layout</li>
+        <li role="separator" class="divider"></li>
+        <div class="btn-group" role="group">
+        <button ng-click='toggleed("off")' type="button"  class="btn btn-default">Full Page</button>
+        <button ng-click='toggleed("on")' type="button"   class="btn btn-default">Editor View</button>
+        </div>
+        <li role="separator" class="divider"></li>
+        <div class="btn-group" role="group">
+        <button type="button"  class="btn btn-default"><img src="../css/left.png" height='30px'></button>
+        <button type="button"   class="btn btn-default"><img src="../css/middle.png" height='30px'></button>
+        <button type="button"   class="btn btn-default"><img src="../css/right.png" height='30px'></button>
+        </div>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a  style='border-radius:4px;background-color:#262626;color:white;font-size:26px;margin-top:2px;padding:10px;margin-right:7px;' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span></a>
+      <ul class="dropdown-menu create-menu">
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Help</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="/auth">Login</a></li>
+        <li><a href="/auth/logout">Logout</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+</div><!-- /.navbar-collapse -->
+<!-- /.container-fluid -->
+</nav>

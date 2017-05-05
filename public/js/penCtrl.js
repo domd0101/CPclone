@@ -1,9 +1,33 @@
 cpapp.controller('penCtrl',['$scope','mainService','$state','$stateParams','$http',function($scope,mainService,$state,$stateParams,$http){
 
+  $scope.ed=true;
+
+  $scope.toggleed = function(para){
+    if(para === 'on'){
+      $scope.ed=true;
+      console.log('on');
+    }
+    else if(para === 'off'){
+      $scope.ed=false;
+      console.log('off');
+    }
+  }
+
+
+  var title = $stateParams.title;
+
 
 $scope.picked2 = function(){
-  var promise = mainService.picked();
+  if($stateParams.title==='pen'){
+    var promise = mainService.picked();
+  }
+  else if ($stateParams.title==='search'){
+    var g = localStorage.array;
+    var promise = mainService.searching(g);
+  }
+
   return promise.then(function(res){
+    console.log(res);
     $scope.pickpage = [];
     for (var i = 0; i < 12; i++) {
       $scope.pickpage.push(res.data.data[i]);
@@ -11,7 +35,7 @@ $scope.picked2 = function(){
     $scope.onePen = $scope.pickpage.filter(function(data) {
       return data.id === $stateParams.id
     })
-    console.log($scope.onePen[0].title)
+    console.log($scope.onePen[0])
     $http.get($scope.onePen[0].link+'.html')
     .then(function(details){
       $scope.penHTML = details.data;
@@ -27,16 +51,13 @@ $scope.picked2 = function(){
     $http.get($scope.onePen[0].link+'.js')
     .then(function(details){
       $scope.penJS = details.data;
-      console.log($scope.penJS);
       editor3.replaceSelection($scope.penJS);
     });
-
-
-
     return $scope.onePen, $scope.penHTML, $scope.penCSS, $scope.penJS
   })
 }
-$scope.picked2();
+  $scope.picked2();
+
 
   var textarea1 = document.getElementById('htmlcode');
   var editor1 = CodeMirror.fromTextArea(textarea1, {
@@ -72,7 +93,10 @@ $scope.picked2();
     document.getElementById("out").contentWindow.eval(editor3.getValue());
     }
 
-    // setInterval(function(){ updateOutput(); }, 30000);
+    // var billy = function(){
+    //   setInterval(function(){ updateOutput(); }, 7000);
+    // }
+
     setTimeout(function(){ updateOutput(); }, 3000);
 
 

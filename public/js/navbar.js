@@ -4,4 +4,5 @@ cpapp.directive('navBar',function(){
     templateUrl:'html/navbar.html',
     controller: 'mainCtrl'
   }
+
 })

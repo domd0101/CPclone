@@ -1,6 +1,8 @@
 var cpapp = angular.module('cpapp',['ui.router']);
 
   cpapp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+
+
     $urlRouterProvider.when('','/home');
     $stateProvider
       .state('home',{
@@ -11,7 +13,7 @@ var cpapp = angular.module('cpapp',['ui.router']);
       .state('newpen',{
         url: '/newpen',
         templateUrl: './html/newpen.html',
-        controller: 'mainCtrl'
+        controller: 'newpenCtrl'
       })
       .state('pens',{
         url: '/pens',
@@ -44,7 +46,7 @@ var cpapp = angular.module('cpapp',['ui.router']);
         controller: 'searchctrl'
       })
       .state('viewpen',{
-        url: '/viewpen/:id',
+        url: '/viewpen/:title/:id',
         templateUrl: './html/viewpen.html',
         controller: 'penCtrl'
       })
