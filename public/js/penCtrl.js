@@ -1,4 +1,4 @@
-cpapp.controller('penCtrl',['$scope','mainService','$state','$stateParams','$http',function($scope,mainService,$state,$stateParams,$http){
+cpapp.controller('penCtrl',['$scope','mainService','$stateParams','$http',function($scope,mainService,$stateParams,$http){
 
   $scope.ed=true;
 
@@ -88,7 +88,7 @@ $scope.picked2 = function(){
         editor3.markClean();
 
     var updateOutput = function() {
-    $("#out").contents().find("html").html("<html><style>"+editor2.getValue()+
+    $("iframe").contents().find("html").html("<html><style>"+editor2.getValue()+
     "</style><body>"+editor1.getValue()+"</body></html>");
     document.getElementById("out").contentWindow.eval(editor3.getValue());
     }
@@ -97,7 +97,7 @@ $scope.picked2 = function(){
     //   setInterval(function(){ updateOutput(); }, 7000);
     // }
 
-    setTimeout(function(){ updateOutput(); }, 3000);
+    setTimeout(function(){ updateOutput(); }, 3500);
 
 
 }])

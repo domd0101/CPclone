@@ -1,13 +1,11 @@
 cpapp.controller('mainCtrl',['$scope','mainService','$state','$stateParams','userService',function($scope,mainService,$state,$stateParams,userService){
 
-
   function getUser() {
     userService.getUser().then(function(user) {
       if (user) $scope.user = user.username;
       else   $scope.user = 'NOT LOGGED IN';
     })
   }
-
   getUser();
 
   $scope.loginLocal = function(username, password) {
@@ -20,8 +18,8 @@ cpapp.controller('mainCtrl',['$scope','mainService','$state','$stateParams','use
       getUser();
     })
   }
-
   $scope.logout = userService.logout;
+  userService.getUser()
 
 
 

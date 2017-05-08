@@ -1,4 +1,5 @@
 cpapp.service('userService', function($http) {
+
   this.loginLocal = function(credentials) {
     return $http({
       method: "POST",
@@ -19,6 +20,7 @@ cpapp.service('userService', function($http) {
       url: '/auth/me'
     })
     .then(function(res) {
+      // console.log('userservice data',res.data);
       return res.data;
     })
     .catch(function(err) {

@@ -50,4 +50,9 @@ var cpapp = angular.module('cpapp',['ui.router']);
         templateUrl: './html/viewpen.html',
         controller: 'penCtrl'
       })
+      .state('profile',{
+        url: '/profile',
+        templateUrl: './html/profile.html',
+        controller: 'profileCtrl'
+      })
 }])
