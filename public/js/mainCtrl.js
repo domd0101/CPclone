@@ -2,8 +2,12 @@ cpapp.controller('mainCtrl',['$scope','mainService','$state','$stateParams','use
 
   function getUser() {
     userService.getUser().then(function(user) {
-      if (user) $scope.user = user.username;
-      else   $scope.user = 'NOT LOGGED IN';
+      if (user) {
+        $scope.pic2 = user.pic;
+      }
+      else {
+        $scope.pic2 = 'https://i2.wp.com/codepen.io/assets/avatars/user-avatar-512x512-6e240cf350d2f1cc07c2bed234c3a3bb5f1b237023c204c782622e80d6b212ba.png?ssl=1';
+      }
     })
   }
   getUser();

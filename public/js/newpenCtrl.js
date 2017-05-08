@@ -1,7 +1,24 @@
-cpapp.controller('newpenCtrl',['$scope',function($scope){
+cpapp.controller('newpenCtrl',['$scope','userService',function($scope,userService){
 
-  $scope.Name='Untitled';
-  $scope.User='User';
+  function getUser() {
+    userService.getUser().then(function(user) {
+      if (user) {
+        console.log('ctrl -->',user);
+        $scope.pic2 = user.pic;
+        $scope.userid = user.id;
+        $scope.name = user.name;
+        $scope.nickname = user.nickname;
+        $scope.pic = user.pic;
+        $scope.penname='Untitled';
+      }
+      else {
+        $scope.pic2 = 'https://i2.wp.com/codepen.io/assets/avatars/user-avatar-512x512-6e240cf350d2f1cc07c2bed234c3a3bb5f1b237023c204c782622e80d6b212ba.png?ssl=1';
+        $scope.penname='Untitled';
+        $scope.nickname='User';
+      }
+    })
+  }
+  getUser();
 
   var textarea1 = document.getElementById('htmlcode');
   var editor1 = CodeMirror.fromTextArea(textarea1, {

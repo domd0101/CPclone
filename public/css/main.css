@@ -6,6 +6,7 @@ body{
   height: 65px;
   padding-top: 7px;
   position: relative;
+  border-bottom: 1px solid #262626;
 }
 .search-bar{
   width: 1200px;

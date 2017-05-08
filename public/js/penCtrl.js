@@ -1,4 +1,24 @@
-cpapp.controller('penCtrl',['$scope','mainService','$stateParams','$http',function($scope,mainService,$stateParams,$http){
+cpapp.controller('penCtrl',['$scope','mainService','$stateParams','$http','userService',function($scope,mainService,$stateParams,$http,userService){
+
+  function getUser() {
+    userService.getUser().then(function(user) {
+      if (user) {
+        console.log('ctrl -->',user);
+        $scope.pic2 = user.pic;
+        $scope.userid = user.id;
+        $scope.name = user.name;
+        $scope.nickname = user.nickname;
+        $scope.pic = user.pic;
+        $scope.penname='Untitled';
+      }
+      else {
+        $scope.pic2 = 'https://i2.wp.com/codepen.io/assets/avatars/user-avatar-512x512-6e240cf350d2f1cc07c2bed234c3a3bb5f1b237023c204c782622e80d6b212ba.png?ssl=1';
+        $scope.penname='Untitled';
+        $scope.nickname='User';
+      }
+    })
+  }
+  getUser();
 
   $scope.ed=true;
 

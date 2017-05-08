@@ -8,13 +8,19 @@ cpapp.controller('profileCtrl',['$scope','userService',function($scope,userServi
         $scope.name = user.name;
         $scope.nickname = user.nickname;
         $scope.pic = user.pic;
+        $scope.login = '/#!/profile';
+        $scope.logout_href = '/auth/logout';
+        $scope.notname = 'Not '+$scope.name+'?';
+        $scope.logout = 'Click to Logout';
       }
       else   {
         $scope.nickname = 'NOT LOGGED IN'
-        $scope.name = 'Try Logging in';
+        $scope.name = 'Click Red X to Login';
         $scope.pic = 'http://www.clipartbest.com/cliparts/7ia/o8d/7iao8dx5T.png';
+        $scope.login = '/auth';
+        $scope.logout = ' ';
       }
-
+      console.log($scope.pic);
     })
   }
   getUser();

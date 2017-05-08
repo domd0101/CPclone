@@ -1,12 +1,26 @@
 <nav-bar ></nav-bar>
 
+<!-- <li><a href="/auth">Login</a></li>
+<li><a href="/auth/logout">Logout</a></li> -->
+
 <div class='profile-top'>
   <h1>{{nickname}}</h1>
   <h4 >{{name}}</h4>
-  <img class='img-circle profile-pic' src="{{ pic }}">
+  <div class='profile-pic'>
+    <a href='{{login}}'>
+      <img class='pic img-rounded' src="{{pic}}">
+    </a>
+  </div>
+
+
 
   <div class='profile-top-border'>
-    <p><p1>0</p1> Followers &nbsp &nbsp &nbsp <p1>0</p1> Following</p>
+    <div>
+      <p><p1>0</p1> Followers &nbsp &nbsp &nbsp <p1>0</p1> Following</p>
+    </div>
+    <div>
+      <p><a style='color:#e68a00' href='{{logout_href}}'>{{notname}}</a>  {{logout}}</p>
+    </div>
   </div>
 </div>
 
@@ -14,9 +28,9 @@
 <section class='profile-body'>
   <div class='profile-nav'>
     <ul class="nav nav-pills">
-      <li role="presentation"><a >Showcase</a></li>
-      <li role="presentation"><a >Pens</a></li>
-      <li role="presentation"><a >Posts</a></li>
+      <li role="presentation"><a>Showcase</a></li>
+      <li role="presentation"><a>Pens</a></li>
+      <li role="presentation"><a>Posts</a></li>
     </ul>
   </div>
 
