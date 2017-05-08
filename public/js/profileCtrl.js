@@ -20,7 +20,7 @@ cpapp.controller('profileCtrl',['$scope','userService',function($scope,userServi
         $scope.login = '/auth';
         $scope.logout = ' ';
       }
-      console.log($scope.pic);
+      return $scope.userid
     })
   }
   getUser();
@@ -38,6 +38,30 @@ cpapp.controller('profileCtrl',['$scope','userService',function($scope,userServi
   $scope.logout = userService.logout;
   userService.getUser()
 
+
+  function getPens(){
+    userService.getUser().then(function(user){
+      if(user){
+      var id = $scope.userid;
+    userService.getPens(id).then(function(pens) {
+        if (pens) {
+          console.log('ctrl pens --> lokk',pens);
+          console.log(pens[0].users_id);
+          $scope.userpens = [];
+          for(var i=0;i<pens.length;i++){
+          $scope.userpens.push(pens[i]);
+          }
+          console.log($scope.userpens);
+          return $scope.userpens
+        }
+        else  {
+          $scope.penname = 'untitled';
+        }
+      })
+    }
+   })
+  }
+  getPens();
 
 
 }])

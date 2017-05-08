@@ -126,6 +126,36 @@ app.get('/auth/logout', function(req, res) {
   res.redirect('/');
 })
 
+app.post('/postPen',function(req, res){
+  console.log('working');
+  console.log('req',req.body);
+  let data = [
+    req.body.penname,
+    req.body.users_id,
+    req.body.htmlval,
+    req.body.cssval,
+    req.body.jsval
+  ];
+  db.postPen(data, (err, sqlResponse) => {
+    if (!err) {
+      res.status(200).send(sqlResponse);
+              }
+    else {
+          res.send(err);
+         }
+  })
+})
+
+  app.post('/getPens',function(req, res){
+    db.getPens(req.body.id, function(err,pens){
+      if (!err) {
+        res.status(200).send(pens);
+      } else {
+        res.send(err);
+      }
+    })
+  })
+
 app.listen(3000, function() {
   console.log('Connected on 3000')
 })

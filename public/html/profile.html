@@ -34,14 +34,23 @@
     </ul>
   </div>
 
+  <div class='user-pens'>
 
+        <div ng-repeat='x in userpens' class='user-pen'>
+          <div class='user-pen-img hoverable2'>
+            <img src="https://s-media-cache-ak0.pinimg.com/originals/77/2a/97/772a971a5e2d65240b68220f862e8a2a.jpg">
+            <div class='hover-text2'>View Pen</div>
+          </div>
+          <div class='bot2'>
+            <p>{{x.penname}}</p>
+            <p ><span class='glyphicon glyphicon-heart'></span> <span class='glyphicon glyphicon-eye-open'></span></p>
+          </div>
+        </div>
 
+  </div>
 
 
 </section>
-
-
-
 
 
 <foot></foot>

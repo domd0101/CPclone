@@ -1,5 +1,16 @@
 cpapp.controller('newpenCtrl',['$scope','userService',function($scope,userService){
 
+  $scope.postPen = function() {
+    var penValues = {
+      penname : $scope.penName,
+      users_id : $scope.userid,
+      htmlval : editor1.getValue(),
+      cssval : editor2.getValue(),
+      jsval : editor3.getValue()
+    }
+    userService.postPen(penValues)
+  }
+
   function getUser() {
     userService.getUser().then(function(user) {
       if (user) {

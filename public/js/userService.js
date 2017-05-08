@@ -41,7 +41,28 @@ cpapp.service('userService', function($http) {
     })
   }
 
-  
+  this.postPen = function(penValues){
+    console.log('sevice trying to post ;)');
+    console.log('the stuff from pen -->',penValues);
+    return $http({
+      method: 'POST',
+      url: '/postPen',
+      data: penValues
+    })
+  }
+
+  this.getPens = function(id){
+    return $http({
+      method: 'POST',
+      url: '/getPens',
+      data: { id }
+    })
+    .then(function(res) {
+      return res.data;
+    })
+  }
+
+
 
 
 

@@ -14,12 +14,10 @@
 
   <section class='left-on-nav'>
     <div>
-      <input placeholder='Untitled' value='{{penName}}' class='pen-view-name'>
+      <input ng-model='penName' placeholder='Untitled' value='{{penName}}' class='pen-view-name'>
     </div>
-    <!-- <input value='{{penName}}' class='pen-view-name'> <span style='font-size:14px;' class='glyphicon glyphicon-pencil'></span>
-    </div> -->
+
     <div>
-      <!-- <p style='color:grey'>A PEN BY <a style='color:white'>User</a></p> -->
       <p style='color:grey'>A PEN BY <a style='color:white'>{{penUser}}</a></p>
     </div>
   </section>
@@ -27,7 +25,7 @@
   <div class='stuff2'>
   <ul class="nav navbar-nav navbar-right">
     <li>
-      <a style='font-weight:normal;border-radius:4px;background-color:#262626;color:white;font-size:16px;margin-top:4px;padding:10px 14px;margin-right:7px;'><span class="glyphicon glyphicon-cloud" style='color:grey;font-size:16px;'></span> Save</a>
+      <a ng-click='postPen()' style='font-weight:normal;border-radius:4px;background-color:#262626;color:white;font-size:16px;margin-top:4px;padding:10px 14px;margin-right:7px;'><span class="glyphicon glyphicon-cloud" style='color:grey;font-size:16px;'></span> Save</a>
     </li>
     <li>
       <a ng-click='html=true;css=false;js=false;bh=false;' data-toggle="modal" data-target="#myModal" style='font-weight:normal;border-radius:4px;background-color:#262626;color:white;font-size:16px;margin-top:4px;padding:10px 14px;margin-right:7px;'><span class="glyphicon glyphicon-cog" style='color:grey;font-size:16px;'></span> Settings</a>
