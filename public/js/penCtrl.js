@@ -1,5 +1,9 @@
 cpapp.controller('penCtrl',['$scope','mainService','$stateParams','$http','userService',function($scope,mainService,$stateParams,$http,userService){
 
+  $("#off").click(function(){
+      $(".editor").toggleClass("editor2");
+  });
+
   function getUser() {
     userService.getUser().then(function(user) {
       if (user) {

@@ -5,8 +5,8 @@
 
 <div class='left'>
   <div>
-    <input class='post-title' placeholder='Post Title'>
-    <p style='font-size:16px;'>http://codepen.io/user/post/<input style='font-size:20px;font-weight:normal;border-radius:3px;' width='150px;'> <a class='btn btn-primary'>Save</a></p>
+    <input ng-model='postTitle' class='post-title' placeholder='Post Title'>
+    <p style='font-size:16px;'>http://codepen.io/user/post/<input ng-model='url' style='font-size:20px;font-weight:normal;border-radius:3px;' width='150px;'> <a class='btn btn-primary'>Save</a></p>
   </div>
   <div class='text-editor-left'>
     <div class='white' id="editor"></div>
@@ -14,7 +14,7 @@
 
   <div>
     <h3 style='color:white;'>Custom CSS</h3>
-    <textarea class='black' rows="4" cols="100"></textarea>
+    <textarea ng-model='css' class='black' rows="4" cols="100"></textarea>
   </div>
 
 
@@ -27,8 +27,8 @@
   </div>
   <p style='color:grey;'>This post is not yet published.</p>
   <div>
-    <button class='btn'>Save</button>
-    <button style='width:150px' class='btn btn-success'>Publish</button>
+    <button ng-click='postPost()' class='btn'>Save</button>
+    <button ng-click='publish()' style='width:150px' class='btn btn-success'>Publish</button>
   </div>
 </div>
 <div class='text-editor-right'>

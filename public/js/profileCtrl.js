@@ -58,6 +58,18 @@ cpapp.controller('profileCtrl',['$scope','userService',function($scope,userServi
           $scope.penname = 'untitled';
         }
       })
+      .then(userService.getPosts(id).then(function(posts){
+        if (posts) {
+          console.log('ctrl post --> lokk',posts);
+          console.log(posts[0].users_id);
+          $scope.userposts = [];
+          for(var i=0;i<posts.length;i++){
+          $scope.userposts.push(posts[i]);
+          }
+          console.log($scope.userposts);
+          return $scope.userposts
+        }
+      }))
     }
    })
   }

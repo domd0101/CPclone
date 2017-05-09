@@ -11,10 +11,12 @@
 
   <div class='picked-page-box'>
     <div ng-repeat='x in collection2' class='picked-post'>
-      <div class='infopost'>
-        <h6 style='color:grey'>{{x.penCount}}</h6>
-      <h4>{{x.title}}</h4>
-      <a style='color:purple' href="{{x.url}}">View full Collection</a>
+      <div class='purple-hover'>
+        <div class='infopost'>
+          <h6 style='color:grey'>{{x.penCount}}</h6>
+        <h4>{{x.title}}</h4>
+        <a style='color:purple' href="{{x.url}}">View full Collection</a>
+        </div>
       </div>
       <div class='bot'>
         <p ><img width='20px' src="{{x.user.avatar}}" alt=""> {{x.user.nicename}}</p>

@@ -114,7 +114,7 @@ body{
   color:grey;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-content: flex-end;
 }
 .latest{
   margin: 20px;
@@ -197,7 +197,7 @@ body{
   margin-bottom: 20px;
   padding: 10px;
   width: 800px;
-  height: 300px;
+  height: 250px;
   background:white;
   border-radius: 3px;
 }
@@ -205,10 +205,26 @@ body{
   padding: 10px;
   border-radius: 2px;
   width:100%;
-  height:80%;
+  height:160px;
   font-size: 16px;
   background: black;
   margin-bottom: 4px;
+}
+.yellow-hover{
+  width: 100%;
+  height: 100%;
+}
+.yellow-hover div:hover{
+  color: yellow;
+  border-bottom: 3px solid yellow;
+}
+.purple-hover{
+  width: 100%;
+  height: 100%;
+}
+.purple-hover div:hover{
+  color: purple;
+  border-bottom: 3px solid purple;
 }
 .lower{
   padding: 20px 60px;

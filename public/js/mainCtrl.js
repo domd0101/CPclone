@@ -1,5 +1,6 @@
 cpapp.controller('mainCtrl',['$scope','mainService','$state','$stateParams','userService',function($scope,mainService,$state,$stateParams,userService){
 
+
   function getUser() {
     userService.getUser().then(function(user) {
       if (user) {
@@ -50,10 +51,10 @@ cpapp.controller('mainCtrl',['$scope','mainService','$state','$stateParams','use
       $scope.post = [];
       $scope.post2 = [];
       for (var i = 0; i < 3; i++) {
-        $scope.post.push(res.data.data[i]);
+        $scope.post.push(res[i]);
       }
-      for (var i = 0; i < 6; i++) {
-        $scope.post2.push(res.data.data[i]);
+      for (var i = 0; i < 12; i++) {
+        $scope.post2.push(res[i]);
       }
       return $scope.post,$scope.post2
     })
@@ -78,10 +79,10 @@ cpapp.controller('mainCtrl',['$scope','mainService','$state','$stateParams','use
       $scope.collection = [];
       $scope.collection2 = [];
       for (var i = 0; i < 3; i++) {
-        $scope.collection.push(res.data.data[i]);
+        $scope.collection.push(res[i]);
       }
-      for (var i = 0; i < 9; i++) {
-        $scope.collection2.push(res.data.data[i]);
+      for (var i = 0; i < 18; i++) {
+        $scope.collection2.push(res[i]);
       }
       return $scope.collection,$scope.collection2
     })

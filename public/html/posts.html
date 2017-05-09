@@ -1,19 +1,21 @@
 <nav-bar></nav-bar>
 
-
   <div class='picked'>
-  <div style='border-color:yellow' class='pickedtop'>
-    <h1 style="font-weight:900;">Explore Posts</h1>
+    <div style='border-color:yellow' class='pickedtop'>
+      <h1 style="font-weight:900;">Explore Posts</h1>
+    </div>
   </div>
-  </div>
+
 <section class='picked-page'>
 
 
   <div class='picked-page-box'>
     <div ng-repeat='x in post2' class='picked-post'>
-      <div class='infopost'>
-      <h4>{{x.title}}</h4>
-      <a style='color:yellow' href="{{x.link}}">View full post</a>
+      <div class='yellow-hover'>
+        <div class='infopost'>
+        <h4>{{x.title}}</h4>
+        <a style='color:yellow' href="{{x.link}}">View full post</a>
+        </div>
       </div>
       <div class='bot'>
         <p ><img width='20px' src="{{x.user.avatar}}" alt=""> {{x.user.nicename}}</p>

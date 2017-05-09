@@ -10,12 +10,12 @@
   <div class='picked-page-box'>
     <div ng-repeat='x in post2' class='picked-blog'>
       <div style='background:white;border:1px solid grey;' class='infopost'>
-      <h1 style='font-weight:bold;color:black'>{{x.title}}</h1>
-      <p><span class='glyphicon glyphicon-eye-open'></span> {{x.views}} &nbsp;&nbsp;&nbsp;&nbsp; <span class='glyphicon glyphicon-heart'></span> {{x.loves}} </p>
-      <a style='color:#00b3b3' href="{{x.link}}">View full post</a>
+        <h1 style='font-weight:bold;color:black'>{{x.title}}</h1>
+        <p><span class='glyphicon glyphicon-eye-open'></span> {{x.views}} &nbsp;&nbsp;&nbsp;&nbsp; <span class='glyphicon glyphicon-heart'></span> {{x.loves}} </p>
       </div>
       <div class='bot'>
-        <p ><img width='20px' src="{{x.user.avatar}}"> {{x.user.nicename}}</p>
+        <div><p><img width='20px' src="{{x.user.avatar}}"> {{x.user.nicename}}</p></div>
+        <div><a style='color:#00b3b3' href="{{x.link}}">View full post</a></div>
       </div>
     </div>
   </div>

@@ -74,9 +74,11 @@
   </div>
     <div class='posts-stuff'>
       <div ng-repeat='x in post' class='picked-post'>
-        <div class='infopost'>
-        <h4>{{x.title}}</h4>
-        <a style='color:yellow' href="{{x.link}}">View full post</a>
+        <div class='yellow-hover'>
+          <div class='infopost'>
+            <h4>{{x.title}}</h4>
+            <a style='color:yellow' href="{{x.link}}">View full post</a>
+          </div>
         </div>
         <div class='bot'>
           <p ><img width='20px' src="{{x.user.avatar}}" alt=""> {{x.user.nicename}}</p>
@@ -84,7 +86,6 @@
         </div>
       </div>
     </div>
-
 </div>
 
 <div class='posts'>
@@ -96,10 +97,12 @@
   </div>
     <div class='posts-stuff'>
       <div ng-repeat='x in collection' class='picked-post'>
-        <div class='infopost'>
-          <h6 style='color:grey'>{{x.penCount}}</h6>
-        <h4>{{x.title}}</h4>
-        <a style='color:purple' href="{{x.url}}">View full Collection</a>
+        <div class='purple-hover'>
+          <div class='infopost'>
+            <h6 style='color:grey'>{{x.penCount}}</h6>
+            <h4>{{x.title}}</h4>
+            <a style='color:purple' href="{{x.url}}">View full Collection</a>
+          </div>
         </div>
         <div class='bot'>
           <p ><img width='20px' src="{{x.user.avatar}}" alt=""> {{x.user.nicename}}</p>

@@ -146,8 +146,38 @@ app.post('/postPen',function(req, res){
   })
 })
 
+app.post('/postPost',function(req, res){
+  console.log('working');
+  console.log('req',req.body);
+  let data = [
+    req.body.title,
+    req.body.users_id,
+    req.body.url,
+    req.body.editor,
+    req.body.css
+  ];
+  db.postpost(data, (err, sqlResponse) => {
+    if (!err) {
+      res.status(200).send(sqlResponse);
+              }
+    else {
+          res.send(err);
+         }
+  })
+})
+
   app.post('/getPens',function(req, res){
     db.getPens(req.body.id, function(err,pens){
+      if (!err) {
+        res.status(200).send(pens);
+      } else {
+        res.send(err);
+      }
+    })
+  })
+
+  app.post('/getPosts',function(req, res){
+    db.getPosts(req.body.id, function(err,pens){
       if (!err) {
         res.status(200).send(pens);
       } else {

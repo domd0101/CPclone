@@ -38,7 +38,7 @@ var cpapp = angular.module('cpapp',['ui.router']);
       .state('newpost',{
         url: '/newpost',
         templateUrl: './html/newpost.html',
-        controller: 'mainCtrl'
+        controller: 'newpostCtrl'
       })
       .state('searchpage',{
         url: '/searchpage',
