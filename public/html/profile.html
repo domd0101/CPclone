@@ -32,8 +32,8 @@
   <div class='user-pens'>
 
         <div ng-repeat='x in userpens' class='user-pen'>
-          <div class='user-pen-img hoverable2'>
-            <img src="https://s-media-cache-ak0.pinimg.com/originals/77/2a/97/772a971a5e2d65240b68220f862e8a2a.jpg">
+          <div ui-sref='viewpen({title:x.penname,id:x.users_id})' class='user-pen-img hoverable2'>
+            <img src="../css/PEN.png">
             <div class='hover-text2'>View Pen</div>
           </div>
           <div class='bot2'>
@@ -44,8 +44,8 @@
 
         <div ng-repeat='x in userposts' class='user-pen'>
           <div class='user-pen-img hoverable2'>
-            <img src="http://www.kortext.com/wp-content/uploads/2017/03/Oli-Blog-2.jpg">
-            <div class='hover-text2'>View Pen</div>
+            <img src="../css/POST.png">
+            <div class='hover-text2'>View Post</div>
           </div>
           <div class='bot2'>
             <p>{{x.title}}</p>

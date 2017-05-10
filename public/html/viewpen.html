@@ -1,4 +1,7 @@
-<pen-bar pen-name='{{onePen[0].title}}' pen-user='{{onePen[0].user.username}}'></pen-bar>
+<pen-bar
+  pen-name='{{onePen[0].title}}{{onePen[0].penname}}'
+  pen-user='{{onePen[0].user.username}}{{onePen[0].nickname}}'
+></pen-bar>
 
 <section ng-show='ed' id='Vresizer' class='editor' style='min-height:45px;max-height:345px;'>
 

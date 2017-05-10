@@ -6,7 +6,8 @@ cpapp.controller('newpenCtrl',['$scope','userService',function($scope,userServic
       users_id : $scope.userid,
       htmlval : editor1.getValue(),
       cssval : editor2.getValue(),
-      jsval : editor3.getValue()
+      jsval : editor3.getValue(),
+      nickname : $scope.nickname
     }
     userService.postPen(penValues)
   }

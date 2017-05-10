@@ -4,6 +4,7 @@ cpapp.controller('newpostCtrl',['$scope','userService',function($scope,userServi
   $scope.postPost = function() {
     console.log('in it');
     userService.getUser().then(function(user) {
+      // console.log(user);
       if (user) {$scope.userid = user.id;}
         var postValues = {
           title : $scope.postTitle,

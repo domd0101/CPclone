@@ -80,8 +80,37 @@ $scope.picked2 = function(){
     return $scope.onePen, $scope.penHTML, $scope.penCSS, $scope.penJS
   })
 }
-  $scope.picked2();
-
+  if($stateParams.title==='pen'|| $stateParams.title==='search'){
+    $scope.picked2();
+  }
+  else{
+    var penname = $stateParams.title
+    var g = $stateParams.id
+    userService.getPens(g).then(function(res){
+      console.log(res);
+      $scope.pickpage = [];
+      for (var i = 0; i < res.length; i++) {
+        $scope.pickpage.push(res[i]);
+      }
+      $scope.onePen = $scope.pickpage.filter(function(data) {
+        console.log(data);
+        return data.penname === $stateParams.title
+      })
+      console.log($scope.onePen);
+      editor1.replaceSelection($scope.onePen[0].html);
+      editor2.replaceSelection($scope.onePen[0].css);
+      editor3.replaceSelection($scope.onePen[0].js);
+      return $scope.onePen
+    })
+  }
+//
+// Object
+// css:"h1{color: green;}"
+// html:"<h1>hello</h1>"
+// id:8
+// js:""
+// penname:"demo pen"
+// users_id:13
 
   var textarea1 = document.getElementById('htmlcode');
   var editor1 = CodeMirror.fromTextArea(textarea1, {

@@ -127,14 +127,14 @@ app.get('/auth/logout', function(req, res) {
 })
 
 app.post('/postPen',function(req, res){
-  console.log('working');
-  console.log('req',req.body);
+  console.log('req for post pen',req.body);
   let data = [
     req.body.penname,
     req.body.users_id,
     req.body.htmlval,
     req.body.cssval,
-    req.body.jsval
+    req.body.jsval,
+    req.body.nickname
   ];
   db.postPen(data, (err, sqlResponse) => {
     if (!err) {
