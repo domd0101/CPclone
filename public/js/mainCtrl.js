@@ -5,6 +5,8 @@ cpapp.controller('mainCtrl',['$scope','mainService','$state','$stateParams','use
     userService.getUser().then(function(user) {
       if (user) {
         $scope.pic2 = user.pic;
+        $scope.userid = user.id;
+        console.log($scope.userid);
       }
       else {
         $scope.pic2 = 'https://i2.wp.com/codepen.io/assets/avatars/user-avatar-512x512-6e240cf350d2f1cc07c2bed234c3a3bb5f1b237023c204c782622e80d6b212ba.png?ssl=1';
@@ -23,7 +25,7 @@ cpapp.controller('mainCtrl',['$scope','mainService','$state','$stateParams','use
           $scope.postname1 = pen[0].title
           $scope.postname2 = pen[1].title
         }
-        return $scope.penname1, $scope.penname2
+        return $scope.penname1, $scope.penname2, $scope.userid
       })
     })
   }

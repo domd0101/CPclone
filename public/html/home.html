@@ -42,11 +42,11 @@
         <span style="color:#1ad1ff;margin-bottom:13px;" class=' glyphicon glyphicon-arrow-right'></span>
       </div>
       <div ng-show='penname1' class='recent-pen'>
-        <img width='100px;' src="../css/codepen-challenge-3.png">
+        <img ui-sref='viewpen({title:penname1,id:userid})' width='100px;' src="../css/codepen-challenge-3.png">
         <h4>{{penname1}}</h4>
       </div>
       <div ng-show='penname2' class='recent-pen'>
-        <img width='100px;' src="../css/codepen-challenge-3.png">
+        <img ui-sref='viewpen({title:penname2,id:userid})' width='100px;' src="../css/codepen-challenge-3.png">
         <h4>{{penname2}}</h4>
       </div>
       <span ng-hide='penname1' style='font-size:30px;color:grey;' class='glyphicon glyphicon-align-left'></span>
