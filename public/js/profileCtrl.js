@@ -1,5 +1,8 @@
 cpapp.controller('profileCtrl',['$scope','userService',function($scope,userService){
 
+  $scope.pen=true;
+  $scope.post=true;
+
   function getUser() {
     userService.getUser().then(function(user) {
       if (user) {

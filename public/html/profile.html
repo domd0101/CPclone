@@ -23,15 +23,15 @@
 <section class='profile-body'>
   <div class='profile-nav'>
     <ul class="nav nav-pills">
-      <li role="presentation"><a>Showcase</a></li>
-      <li role="presentation"><a>Pens</a></li>
-      <li role="presentation"><a>Posts</a></li>
+      <li role="presentation"><a ng-click='pen=true;post=true'>Showcase</a></li>
+      <li role="presentation"><a ng-click='pen=true;post=false'>Pens</a></li>
+      <li role="presentation"><a ng-click='pen=false;post=true'>Posts</a></li>
     </ul>
   </div>
 
   <div class='user-pens'>
 
-        <div ng-repeat='x in userpens' class='user-pen'>
+        <div ng-show='pen' ng-repeat='x in userpens' class='user-pen'>
           <div ui-sref='viewpen({title:x.penname,id:x.users_id})' class='user-pen-img hoverable2'>
             <img src="../css/PEN.png">
             <div class='hover-text2'>View Pen</div>
@@ -42,7 +42,7 @@
           </div>
         </div>
 
-        <div ng-repeat='x in userposts' class='user-pen'>
+        <div ng-show='post' ng-repeat='x in userposts' class='user-pen'>
           <div class='user-pen-img hoverable2'>
             <img src="../css/POST.png">
             <div class='hover-text2'>View Post</div>

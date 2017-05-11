@@ -9,6 +9,22 @@ cpapp.controller('mainCtrl',['$scope','mainService','$state','$stateParams','use
       else {
         $scope.pic2 = 'https://i2.wp.com/codepen.io/assets/avatars/user-avatar-512x512-6e240cf350d2f1cc07c2bed234c3a3bb5f1b237023c204c782622e80d6b212ba.png?ssl=1';
       }
+      userService.getPens(user.id).then(function(pen){
+        console.log(pen[0].penname);
+        if(pen){
+          $scope.penname1 = pen[0].penname
+          $scope.penname2 = pen[1].penname
+        }
+        return $scope.penname1, $scope.penname2
+      })
+      userService.getPosts(user.id).then(function(pen){
+        console.log(pen[0].title);
+        if(pen){
+          $scope.postname1 = pen[0].title
+          $scope.postname2 = pen[1].title
+        }
+        return $scope.penname1, $scope.penname2
+      })
     })
   }
   getUser();

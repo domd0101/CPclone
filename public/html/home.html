@@ -41,7 +41,15 @@
         <h4 style="font-weight:900;">My Recent Pens </h4>
         <span style="color:#1ad1ff;margin-bottom:13px;" class=' glyphicon glyphicon-arrow-right'></span>
       </div>
-      <span style='font-size:30px;color:grey;' class='glyphicon glyphicon-align-left'></span>
+      <div ng-show='penname1' class='recent-pen'>
+        <img width='100px;' src="../css/codepen-challenge-3.png">
+        <h4>{{penname1}}</h4>
+      </div>
+      <div ng-show='penname2' class='recent-pen'>
+        <img width='100px;' src="../css/codepen-challenge-3.png">
+        <h4>{{penname2}}</h4>
+      </div>
+      <span ng-hide='penname1' style='font-size:30px;color:grey;' class='glyphicon glyphicon-align-left'></span>
 
       <div style='border-color:yellow;' class='recent-top'>
         <h4 style="font-weight:900;">My Recent Projects</h4>
@@ -53,13 +61,15 @@
         <h4 style="font-weight:900;">My Recent Posts</h4>
         <span style="color:green;margin-bottom:13px;" class='glyphicon glyphicon-arrow-right'></span>
       </div>
-      <span style='font-size:30px;color:grey;' class='glyphicon glyphicon-list'></span>
-
-      <div style='border-color:purple;' class='recent-top'>
-        <h4 style="font-weight:900;">My Recent Collections</h4>
-        <span style="color:purple;margin-bottom:13px;" class=' glyphicon glyphicon-arrow-right'></span>
+      <div ng-show='postname1' class='recent-pen'>
+        <img width='100px;' src="../css/codepen-challenge-3.png">
+        <h4>{{postname1}}</h4>
       </div>
-      <span style='font-size:30px;color:grey;' class='glyphicon glyphicon-align-left'></span>
+      <div ng-show='postname2' class='recent-pen'>
+        <img width='100px;' src="../css/codepen-challenge-3.png">
+        <h4>{{postname2}}</h4>
+      </div>
+      <span ng-hide='postname1' style='font-size:30px;color:grey;' class='glyphicon glyphicon-list'></span>
 
     </section>
   </div>
