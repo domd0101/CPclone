@@ -4,7 +4,7 @@ const express = require('express'),
       massive = require('massive'),
       passport = require('passport'),
       Auth0Strategy = require('passport-auth0'),
-      config = require('config.js'),
+      config = require('./config.js'),
       cors = require('cors');
 
 const app = express();
