@@ -25,7 +25,9 @@ app.use(express.static(__dirname + '/public'));
 /////////////
 // DATABASE //
 /////////////
-const massiveInstance = massive.connectSync({connectionString: 'postgres://localhost/CPclone'})
+const massiveInstance = massive.connectSync({connectionString: config.connectstring})
+
+// postgres://oebdqhdh:1A2Y_mAX5ZiIk4_tFUANeyZbthl2xEZ_@stampy.db.elephantsql.com:5432/oebdqhdh
 
 app.set('db', massiveInstance);
 const db = app.get('db');

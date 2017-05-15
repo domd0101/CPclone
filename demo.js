@@ -5,6 +5,8 @@ Pens to search:
 2: Completely Unnecessary Bender
 3: SVG WiFi icon animation loop (WebKit-only)
 4: EU Referendum Neon Penguin
+5: Colored wave of dots
+
 
 Current bugs:
 1: jQuery-ui ----(3)no
