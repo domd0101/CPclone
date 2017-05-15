@@ -4,6 +4,11 @@ cpapp.controller('penCtrl',['$scope','mainService','$stateParams','$http','userS
       $(".editor").toggleClass("editor2");
   });
 
+  editor1.markClean();
+  editor2.markClean();
+  editor3.markClean();
+
+
   function getUser() {
     userService.getUser().then(function(user) {
       if (user) {

@@ -1,5 +1,10 @@
 cpapp.controller('newpenCtrl',['$scope','userService',function($scope,userService){
 
+  editor1.markClean();
+  editor2.markClean();
+  editor3.markClean();
+
+
   $scope.postPen = function() {
     var penValues = {
       penname : $scope.penName,

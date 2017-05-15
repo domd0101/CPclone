@@ -16,3 +16,22 @@ Current bugs:
 
 Extra:
 1: Mobile button in Editor View
+
+
+<h1>What happens onClick</h1>
+
+<button onclick='fun()' class='big'>CLICK</button>
+
+h1{
+color:blue;
+}
+.big{
+width:200px;
+	height:50px;
+  background: blue;
+  color: white;
+}
+
+var fun = function(){
+alert('THE END :)')
+}
