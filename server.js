@@ -43,7 +43,7 @@ passport.use(new Auth0Strategy({
    domain:       config.auth0.domain,
    clientID:     config.auth0.clientID,
    clientSecret: config.auth0.clientSecret,
-   callbackURL:  'http://localhost:3000/auth/callback'
+   callbackURL:  'http://138.68.244.148/auth/callback'
   },
   function(accessToken, refreshToken, extraParams, profile, done) {
     //Find user in database
