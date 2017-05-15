@@ -43,7 +43,7 @@ passport.use(new Auth0Strategy({
    domain:       config.auth0.domain,
    clientID:     config.auth0.clientID,
    clientSecret: config.auth0.clientSecret,
-   callbackURL:  'http://138.68.244.148/auth/callback'
+   callbackURL:  config.auth0.callbackURL
   },
   function(accessToken, refreshToken, extraParams, profile, done) {
     //Find user in database
@@ -72,6 +72,9 @@ passport.use(new Auth0Strategy({
           ]
         }
         db.createUserByAuth(data, function(err, user) {
+          if(err){
+            console.log(err);
+          }
           console.log('USER CREATED', user);
           return done(err, user[0]); // GOES TO SERIALIZE USER
         })
