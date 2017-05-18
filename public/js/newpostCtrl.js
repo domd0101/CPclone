@@ -1,6 +1,5 @@
 cpapp.controller('newpostCtrl',['$scope','userService',function($scope,userService){
 
-
   $scope.postPost = function() {
     console.log('in it');
     userService.getUser().then(function(user) {

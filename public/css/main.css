@@ -9,7 +9,7 @@ body{
   border-bottom: 1px solid #262626;
 }
 .search-bar{
-  width: 1200px;
+  width: 90vw;
   height: 200px;
   background: black;
   color: white;
@@ -51,8 +51,8 @@ body{
 }
 .picked{
   display: flex;
+  justify-content: center;
   color: white;
-  margin: 20px 60px;
 }
 .picked-page{
   color: white;
@@ -70,7 +70,7 @@ body{
   flex-direction: column;
 }
 .pickedtop{
-  width: 100%;
+  width: 95%;
   border-bottom: 4px solid #1ad1ff;
   display: flex;
   justify-content: space-between;
@@ -156,8 +156,13 @@ body{
   align-items: flex-end;
   border-bottom: 4px solid #1ad1ff;
 }
+.picked2{
+  display: flex;
+  flex-direction: column;
+}
 .posts{
   display: flex;
+  align-content: center;
   flex-direction: column;
   color: white;
   padding: 20px 0 30px 40px;
@@ -166,7 +171,6 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  width: 95%;
   border-bottom: 4px solid yellow;
 }
 .posts-stuff{
@@ -179,7 +183,7 @@ body{
   color:white;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin: 5px;
   padding: 10px;
   width: 370px;
   height: 220px;
